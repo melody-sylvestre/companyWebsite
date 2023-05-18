@@ -1,0 +1,17 @@
+@import "../styles/_colors";
+@import "../styles/_fonts";
+
+footer { 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    padding-right: 10px;
+}
+
+@media screen and (max-width:800px){
+    footer{
+        justify-content: center;
+    }
+}
