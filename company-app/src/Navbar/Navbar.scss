@@ -1,8 +1,12 @@
+@import "../styles/_fonts.scss";
+@import "../styles/colors";
+
 * {
     box-sizing: border-box;
 }
 
 nav {
+    align-items: center;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -16,11 +20,34 @@ nav {
 }
 
 .links_container {
+    align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width: 350px
+    width: 350px;
+
+    .link{
+        color: $primary_text_colour;
+        font-family: $paragraph-font;
+        font-size: 12px;
+        font-weight: bold;
+        text-decoration: none;
+        
+    }
+
+    button{
+        background-color: $secondary_accent_colour;
+        border-radius: 5px;
+        border-style: none;
+        color: $primary_accent_colour;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 10px 30px;
+    
+    }
+    
 }
+
 
 @media screen and (max-width:800px) {
     .links_container {
