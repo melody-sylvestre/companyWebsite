@@ -16,7 +16,6 @@
     margin-right: $right_margin;
     padding-top: 20px;
     padding-bottom: 20px;
-
 }
 
 .text_container {
@@ -50,8 +49,7 @@
         font-size: $paragraph_font_size;
         font-weight: bold;
         padding: 10px 30px;
-        width: 150px;
-        
+        width: 150px;    
     }
 
 }
@@ -68,7 +66,7 @@
         margin-right: 10px; 
         justify-content: center;
     }
-
+    
     .text_container {
         align-items: center;
     }
