@@ -6,8 +6,7 @@ const TextNextToImageCard = () => {
         <div classname="text_next_to_image_card">
             <div className="text_container">
                 <p>
-                    Long random text that will have to be replaced by some lorem ipsum. Long random text that will have to be replaced by some lorem ipsum.
-                    Long random text that will have to be replaced by some lorem ipsum. Long random text that will have to be replaced by some lorem ipsum. 
+                Lorem ipsum dolor sit amet. Qui Quis atque quo enim optio ut totam iste et ullam animi. Id molestias culpa eos nisi mollitia qui autem consectetur aut consectetur voluptas eum dolorem voluptatem et quas laudantium. Et voluptatibus excepturi et similique nobis qui ratione tempora id praesentium doloremque eum dolores officia? Qui enim laborum eum assumenda architecto qui labore culpa. 
                 </p>
                 <Link to="/about-us">Learn more</Link>
                 
