@@ -7,7 +7,7 @@ const TextNextToImageCard = () => {
             <div className="text_container">
                 <h2>Lorem ipsum dolor sit amet</h2>
                 <p>
-                Qui Quis atque quo enim optio ut totam iste et ullam animi. Id molestias culpa eos nisi mollitia qui autem consectetur aut consectetur voluptas eum dolorem voluptatem et quas laudantium. Et voluptatibus excepturi et similique nobis qui ratione tempora id praesentium doloremque eum dolores officia? Qui enim laborum eum assumenda architecto qui labore culpa. 
+                Qui quis atque quo enim optio ut totam iste et ullam animi. Id molestias culpa eos nisi mollitia qui autem consectetur aut consectetur voluptas eum dolorem voluptatem et quas laudantium. Et voluptatibus excepturi et similique nobis qui ratione tempora id praesentium doloremque eum dolores officia? Qui enim laborum eum assumenda architecto qui labore culpa. 
                 </p>
                 <ul>
                     <li>Cum aliquid dolorem vel quia repudiandae aut perferendis porro.</li>
