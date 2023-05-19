@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import "./Navbar.scss"
 
-import { ReactComponent as Logo } from '../images/Logo.svg'
+import { ReactComponent as Logo } from '../SVGImages/Logo.svg'
 const Navbar = () => { 
     
     return (

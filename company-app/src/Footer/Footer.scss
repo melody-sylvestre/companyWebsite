@@ -1,13 +1,28 @@
-@import "../styles/_colors";
+@import "../styles/_colours";
 @import "../styles/_fonts";
+@import "../styles/margins";
 
 footer { 
+    border-top: solid $border_colour 1px;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-end;
-    padding-right: 10px;
+    margin-left: $left_margin;
+    margin-right: $right_margin;
+    padding-top: 10px; 
+    p {
+        color: $secondary_text_colour;
+        font-family: $paragraph_font;
+        font-size: 12px;
+    }
+
+    a {
+        color: rgb(180, 180, 184);
+        font-family: $paragraph_font ;
+        font-size: 12px;
+    }
 }
 
 @media screen and (max-width:800px){

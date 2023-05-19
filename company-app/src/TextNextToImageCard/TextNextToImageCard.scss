@@ -1,0 +1,20 @@
+@import "../styles/_colours";
+@import "../styles/_fonts";
+
+* {
+    box-sizing: border-box;
+}
+
+.text_next_to_image_card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+}
+
+
+
+
+.card_image{
+    width: 300px;
+}
+

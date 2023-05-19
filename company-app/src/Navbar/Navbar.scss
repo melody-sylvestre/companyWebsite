@@ -1,5 +1,6 @@
+@import "../styles/colours";
 @import "../styles/_fonts.scss";
-@import "../styles/colors";
+@import "../styles/margins";
 
 * {
     box-sizing: border-box;
@@ -10,9 +11,11 @@ nav {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-top: 20px;
     padding-bottom: 20px;
+    margin-left: $left_margin;
+    margin-right: $right_margin;
 }
 
 .logo_container {

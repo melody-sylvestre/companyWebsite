@@ -2,7 +2,7 @@ import "./Footer.scss"
 const Footer = () => {
     return (
         <footer>
-            <p>Website developed by <a href="https://www.avamae.co.uk/">AVAMAE</a></p>
+            <p>Website Development by <a href="https://www.avamae.co.uk/">AVAMAE</a></p>
         </footer>
     )
 }
