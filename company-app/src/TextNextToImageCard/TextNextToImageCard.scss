@@ -1,0 +1,73 @@
+@import "../styles/_colours";
+@import "../styles/_fonts";
+@import "../styles/_margins";
+
+* {
+    box-sizing: border-box;
+}
+
+.text_next_to_image_card {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+    margin-left: $left_margin;
+    margin-right: $right_margin;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.text_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 500px;
+
+    h2 {
+        color:$primary_text_colour;
+        font-family: $paragraph_font;
+        font-size: $h2_font_size;
+    }
+
+    p,li {
+        color: $primary_text_colour;
+        font-family: $paragraph_font;
+        font-size: $paragraph_font_size;
+    }
+
+    li {
+        font-weight: bold;
+    }
+
+    button {
+        background-color: $primary_accent_colour;
+        border-radius: 5px;
+        border-style: none;
+        color: $tertiary_text_colour;
+        font-family: $paragraph_font;
+        font-size: $paragraph_font_size;
+        font-weight: 700;
+        padding: 10px 30px;
+        width: 150px;    
+    }
+
+}
+
+.card_image {
+    object-fit: cover;
+    height: 250px;
+    width: 450px;
+}
+
+@media screen and (max-width:800px) {
+    .text_next_to_image_card {
+        margin-left: 10px;
+        margin-right: 10px; 
+        justify-content: center;
+    }
+    
+    .text_container {
+        align-items: center;
+    }
+}
