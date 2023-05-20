@@ -1,9 +1,9 @@
 import TextNextToImageCard from "../TextNextToImageCard/TextNextToImageCard"
-import Header from "../Header/Header"
+import Banner from "../Banner/Banner"
 const HomePage = () => {
     return (
         <>
-            <Header/>
+            <Banner/>
             <TextNextToImageCard/>
         </>
     )
