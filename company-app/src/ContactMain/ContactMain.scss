@@ -1,0 +1,10 @@
+@import "../styles/colours";
+@import "../styles/fonts";
+@import "../styles/margins";
+
+.contact_main {
+    display: flex;
+    flex-direction: row;
+    margin-left: $left_margin;
+    margin-right: $right_margin;
+}

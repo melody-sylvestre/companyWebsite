@@ -1,0 +1,11 @@
+@import "../styles/colours";
+@import "../styles/fonts";
+@import "../styles/margins";
+
+
+.name_and_email_box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
