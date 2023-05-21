@@ -12,8 +12,8 @@
     flex-direction: row;
     flex-wrap: wrap-reverse;
     justify-content: space-between;
-    margin-left: $left_margin;
-    margin-right: $right_margin;
+    margin-left: $left_margin_desktop;
+    margin-right: $right_margin_desktop;
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -63,8 +63,8 @@
 
 @media screen and (max-width:800px) {
     .text_next_to_image_card {
-        margin-left: 10px;
-        margin-right: 10px; 
+        margin-left: $side_margins_mobile;
+        margin-right: $side_margins_mobile; 
         justify-content: center;
     }
     

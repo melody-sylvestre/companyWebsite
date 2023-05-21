@@ -2,12 +2,12 @@ import { Link } from "react-router-dom"
 import "./Navbar.scss"
 
 import { ReactComponent as Logo } from '../SVGImages/Logo.svg'
-const Navbar = () => { 
-    
+const Navbar = () => {
+
     return (
         <nav>
             <div className="logo_container">
-                <Logo/>
+                <Logo />
             </div>
             <div className="links_container">
                 <Link to="/" className="link">HOME</Link>
@@ -15,7 +15,6 @@ const Navbar = () => {
                 <Link to="/contact-us" className="link">CONTACT US</Link>
                 <button>Log in</button>
             </div>
-            
         </nav>
     )
 }

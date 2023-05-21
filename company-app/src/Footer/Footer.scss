@@ -11,8 +11,8 @@ footer {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-end;
-    margin-left: $left_margin;
-    margin-right: $right_margin;
+    margin-left: $left_margin_desktop;
+    margin-right: $right_margin_desktop;
     padding-top: 10px; 
     p {
         color: $secondary_text_colour;

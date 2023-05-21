@@ -9,8 +9,8 @@
 .about_us_main{
     display: flex;
     flex-direction: column;
-    margin-left: $left_margin;
-    margin-right: $right_margin;
+    margin-left: $left_margin_desktop;
+    margin-right: $right_margin_desktop;
 
     h1 {
         font-size: $title_font_size ;
@@ -45,7 +45,7 @@
 @media screen  and (max-width: 800px) {
     .about_us_main {
         justify-content: center;
-        margin-left: 10px;
-        margin-right: 10px;
+        margin-left: $side_margins_mobile;
+        margin-right: $side_margins_mobile;
     }
 }

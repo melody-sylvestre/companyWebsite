@@ -25,8 +25,8 @@
     justify-content: space-around ;
     max-height: 300px;
     max-width: 500px;
-    margin-left: $left_margin;
-    margin-right: $right_margin;
+    margin-left: $left_margin_desktop;
+    margin-right: $right_margin_desktop;
     background-color:$additional_background_colour;
     padding: 20px ;
 
@@ -60,8 +60,8 @@
 
 @media screen and (max-width:800px) {
     .text_container_card_with_background_image {
-        margin-left: 10px;
-        margin-right: 10px; 
+        margin-left: $side_margins_mobile;
+        margin-right: $side_margins_mobile; 
         justify-content: center;
     }
 
