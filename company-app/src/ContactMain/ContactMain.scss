@@ -17,12 +17,14 @@
 .contact_text_container{
     max-width: 500px;
 
-    h2 { 
-        font-size: $title_font_size ;
-        font-weight: 300;
+    h1{ 
+        color: $primary_text_colour;
+        font-size: $subtitle_font_size ;
+        font-weight: normal;
     }
 
     p {
+        color: $primary_text_colour;
         font-size: $paragraph_font_size;
         font-weight: bold;
     }
@@ -40,6 +42,7 @@
     }
 
     .contact_main {
+        justify-content: center;
         margin-left: $side_margins_mobile;
         margin-right: $side_margins_mobile;
     }

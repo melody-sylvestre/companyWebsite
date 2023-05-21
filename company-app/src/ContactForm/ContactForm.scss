@@ -9,6 +9,8 @@
 form {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    column-gap: 20px;
 }
 
 input,
@@ -17,6 +19,9 @@ textarea {
     border: solid $border_colour 1px;
 }
 
+#Message {
+    height: 200px;
+}
 .form_field_and_label {
     display: flex;
     flex-direction: column;
@@ -119,11 +124,9 @@ textarea {
 
 @media screen and (max-width: 800px) {
     .city_and_country_details {
-        justify-content: space-between;
+        // justify-content: space-between;
         .form_field_and_label {
             max-width: 150px;
         }
     }
-    
-    
 }

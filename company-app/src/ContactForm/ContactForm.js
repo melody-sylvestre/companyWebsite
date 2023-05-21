@@ -166,7 +166,7 @@ const ContactForm = (props) => {
                 <input type="text" name="StateCounty" id="state" value={addressDetails.StateCounty || ""} required onChange={event => handleChangeAddress(event)} />
               </div>
             </div>
-           <div className="postcode_country_fields">
+            <div className="postcode_country_fields">
               <div className="form_field_and_label">
                 <label htmlFor="postcode">Postcode</label>
                 <input type="text" name="Postcode" id="postcode" value={addressDetails.Postcode || ""} required onChange={event => handleChangeAddress(event)} />
@@ -184,7 +184,7 @@ const ContactForm = (props) => {
         <div className="submit_icon_container">
           <IconSubmit />
         </div>
-        <p>Submit</p>
+        Submit
       </button>
     </form>
   )
