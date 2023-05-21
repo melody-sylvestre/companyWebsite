@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-items: start;
+    align-items: flex-start;
     justify-content: center;
     height: 400px;
 }
@@ -24,6 +24,10 @@
         font-family: $paragraph_font;
     }
     
+    h1 {
+        font-size: 40px;
+    }
+
     p {
         font-size: $subtitle_font_size;
     }

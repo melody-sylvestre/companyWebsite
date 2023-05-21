@@ -27,7 +27,8 @@
     h2 {
         color:$primary_text_colour;
         font-family: $paragraph_font;
-        font-size: $h2_font_size;
+        font-size: $heading_font_size;
+        font-weight: 400;
     }
 
     p,li {
