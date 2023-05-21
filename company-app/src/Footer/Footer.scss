@@ -16,13 +16,13 @@ footer {
     padding-top: 10px; 
     p {
         color: $secondary_text_colour;
-        font-family: $paragraph_font;
+        font-family: $main_font;
         font-size: $paragraph_font_size;
     }
 
     a {
         color: rgb(180, 180, 184);
-        font-family: $paragraph_font ;
+        font-family: $main_font;
         font-size: $paragraph_font_size;
     }
 }

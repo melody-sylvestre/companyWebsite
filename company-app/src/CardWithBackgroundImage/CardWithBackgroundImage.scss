@@ -32,14 +32,14 @@
 
     h2 {
         color:$tertiary_text_colour;
-        font-family: $paragraph_font;
-        font-size: $heading_font_size;
+        font-family: $main_font;
+        font-size: $title_font_size ;
         font-weight: 400;
     }
 
     p {
         color: $tertiary_text_colour;
-        font-family: $paragraph_font;
+        font-family: $main_font;
         font-size: $paragraph_font_size;
         
     }
@@ -49,7 +49,7 @@
         border-radius: 5px;
         border-style: none;
         color: $primary_accent_colour;
-        font-family: $paragraph_font;
+        font-family: $main_font;
         font-size: $paragraph_font_size;
         font-weight: 700;
         padding: 10px 30px;

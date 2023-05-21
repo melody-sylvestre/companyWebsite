@@ -3,7 +3,7 @@
 @import "../styles/margins";
 
 * {
-    font-family: $paragraph-font;
+    font-family: $main-font;
 }
 
 .about_us_main{
@@ -13,7 +13,7 @@
     margin-right: $right_margin;
 
     h1 {
-        font-size: $heading_font_size;
+        font-size: $title_font_size ;
     }
 
     h2 {

@@ -17,8 +17,8 @@
     
     h2 {
         color:$primary_text_colour;
-        font-family: $paragraph_font;
-        font-size: $heading_font_size;
+        font-family: $main_font;
+        font-size: $title_font_size ;
         font-weight: 400;
     }
 }
@@ -31,7 +31,7 @@
     gap: 20px;
     p {
         color: $primary_text_colour;
-        font-family: $paragraph_font;
+        font-family: $main_font;
         font-size: $paragraph_font_size;
         max-width: 300px;
     }    
@@ -47,7 +47,7 @@
     border-radius: 5px;
     border-style: none;
     color: $tertiary_text_colour;
-    font-family: $paragraph_font;
+    font-family: $main_font;
     font-size: $paragraph_font_size;
     font-weight: bold ;
     text-decoration: none;

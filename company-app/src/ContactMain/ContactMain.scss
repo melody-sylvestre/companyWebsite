@@ -3,7 +3,7 @@
 @import "../styles/margins";
 
 * {
-    font-family: $paragraph_font;
+    font-family: $main_font;
 }
 
 .contact_main {
@@ -18,7 +18,7 @@
     max-width: 500px;
 
     h2 { 
-        font-size: $heading_font_size;
+        font-size: $title_font_size ;
         font-weight: 300;
     }
 
