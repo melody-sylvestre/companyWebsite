@@ -2,18 +2,47 @@
 @import "../styles/_fonts.scss";
 @import "../styles/margins";
 
+* {
+    font-family: $paragraph-font;
+}
+
 .about_us_main{
     display: flex;
     flex-direction: column;
     margin-left: $left_margin;
     margin-right: $right_margin;
+
+    h1 {
+        font-size: $heading_font_size;
+    }
+
+    h2 {
+        font-size: $subtitle_font_size;
+    }
+
+    p{
+        font-size: $paragraph_font_size;
+    }
+
+    li{
+        font-size: $paragraph_font_size;
+        font-weight: bold;
+    }
+    .about_us_subtitle {
+        font-weight: bold;
+    }
+
+
 }
+
 
 .image_about_us {
     max-width: 500px;
     object-fit: cover; 
     margin: 0 auto;
 }
+
+
 
 @media screen  and (max-width: 800px) {
     .about_us_main {
