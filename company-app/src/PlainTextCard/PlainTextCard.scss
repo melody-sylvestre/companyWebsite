@@ -1,0 +1,72 @@
+@import "../styles/_colours";
+@import "../styles/_fonts";
+@import "../styles/_margins";
+
+* {
+    box-sizing: border-box;
+}
+
+.plain_text_card {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-left: $left_margin;
+    margin-right: $right_margin;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+    h2 {
+        color:$primary_text_colour;
+        font-family: $paragraph_font;
+        font-size: $heading_font_size;
+        font-weight: 400;
+    }
+}
+.plain_text_container {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly ;
+    flex-wrap: wrap;
+    gap: 20px;
+    p {
+        color: $primary_text_colour;
+        font-family: $paragraph_font;
+        font-size: $paragraph_font_size;
+        max-width: 300px;
+    }    
+
+    .introduction_text {
+        font-weight: bold;
+    }
+
+}
+
+.link_plain_text_container{
+    background-color: $primary_accent_colour;
+    border-radius: 5px;
+    border-style: none;
+    color: $tertiary_text_colour;
+    font-family: $paragraph_font;
+    font-size: $paragraph_font_size;
+    font-weight: bold ;
+    text-decoration: none;
+    padding: 10px 30px;
+}   
+
+
+
+@media screen and (max-width:800px) {
+    .plain_text_card {
+        align-items: center;
+        margin-left: 10px;
+        margin-right: 10px; 
+        justify-content: center;
+    }
+
+    .plain_text_container {
+        p {
+            max-width: 400px;
+        }
+    }
+}
