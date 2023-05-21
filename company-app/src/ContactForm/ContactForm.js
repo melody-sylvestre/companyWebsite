@@ -1,123 +1,76 @@
 import "./ContactForm.scss"
-import { useState, useEffect } from "react"
+import { useState } from "react"
+
 
 const ContactForm = () => {
 
-    const [formValues, setFormValues] = useState({name: "", email : "", phoneNumbers: [""]})
+  const [simpleFormFields, setSimpleFormFields] = useState(
+    {
+      FullName: "",
+      EmailAddress: "",
+      Message: "",
+    })
 
-    let handleChangeSingleItem = (event) => {
-        let newFormValues = formValues
-        newFormValues[event.target.name] = event.target.value
-        setFormValues(newFormValues);
-      }
-    
-    let addFormFields = () => {
-        let newFormValues = formValues
-        newFormValues.phoneNumbers = [...newFormValues.phoneNumbers, ""]
-        setFormValues(newFormValues)
-        console.log(formValues)
-      }
-    
-    let removeFormFields = (i) => {
-        let newFormValues = [...formValues];
-        newFormValues.splice(i, 1);
-        setFormValues(newFormValues)
-    }
-    
-    let handleSubmit = (event) => {
-        event.preventDefault();
-        alert(JSON.stringify(formValues));
-    }
+  const [phoneNumbers, setPhoneNumbers] = useState([""])
 
-    return (
-        <form  onSubmit={handleSubmit}>
-            <div className="form-inline">
-              <label>Full name</label>
-              <input type="text" name="name" value={{formValues}.name  || ""} onChange={event => handleChangeSingleItem(event)} />
-              <label>Email</label>
-              <input type="text" name="email" value={formValues.email || ""} onChange={event => handleChangeSingleItem(event)} />
-              
-              <div>
-                {formValues.phoneNumbers.map((phoneNumber, index)=> {
-                    return (
-                    <p key={index}>hello </p>
-                    )
-                })}
-              </div>
+  const handleChangeSimpleFormFields = (event) => {
+    let newSimpleFormFields = {...simpleFormFields}
+    newSimpleFormFields[event.target.name] = event.target.value
+    setSimpleFormFields(newSimpleFormFields)
+  }
 
-              {/* <div>
-              {formValues.phoneNumber?.map((phoneNumber, index) => {
-                return(
-                <div className="phone_number" key={index}>
-                    <label>Phone number</label>
-                    <input type="tel" name="phoneNumber" value={phoneNumber || ""} onChange={event => handleChangeSingleItem(event)} />
-              </div>)})}
-              </div> */}
-              {/* {
-                index ? 
-                  <button type="button"  className="button remove" onClick={() => removeFormFields(index)}>Remove</button> 
-                : null
-              } */}
-            </div>
-          <div className="button-section">
-              <button className="button add" type="button" onClick={() => addFormFields()}>Add</button>
-              <button className="button submit" type="submit">Submit</button>
+  const handleChangePhoneNumber = (i, e) => {
+    let newPhoneNumbers = [...phoneNumbers]
+    newPhoneNumbers[i] = e.target.value
+    setPhoneNumbers(newPhoneNumbers)
+  }
+
+  const addPhoneNumberField = () => {
+    setPhoneNumbers([...phoneNumbers, ""])
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(JSON.stringify(phoneNumbers));
+    alert(JSON.stringify(simpleFormFields))
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div className="name_and_email_section">
+        <div className="form_field_and_label">
+          <label htmlFor="name">Full name</label>
+          <input type="text" name="FullName" id="name" value={simpleFormFields.FullName||""} onChange={event => handleChangeSimpleFormFields(event)}/>
+        </div>
+        <div className="form_field_and_label">
+          <label htmlFor="email">Email address</label>
+          <input type="text" id="email" name="EmailAddress" value={simpleFormFields.EmailAddress||""} onChange={event => handleChangeSimpleFormFields(event)}/>
+        </div>
+      </div>
+
+      <div className="phone_numbers_section">
+        {phoneNumbers.map((element, index) => (
+          <div className="form_field_and_label" key={index}>
+            <label htmlFor={"phone_number_"+(index+1)}>{index < 9 ? "Phone number 0" + (index + 1) : "Phone number " + (index + 1)} <span> - Optional </span></label>
+            <input type="tel" name="phoneNumber" id={"phone_number_"+(index+1)} value={element || ""} onChange={e => handleChangePhoneNumber(index, e)} />
           </div>
-      </form>
-    )
+        ))}
+         <button className="button add" type="button" onClick={() => addPhoneNumberField()}>Add</button>
+      </div>
 
+       <div className="message_section form_field_and_label">
+        <label htmlFor="Message">Message</label>
+        <textarea name="Message" id="Message" value={simpleFormFields.Message || ""} onChange={event => handleChangeSimpleFormFields(event)}/>  
+      </div> 
+
+      <button className="button submit" type="submit">Submit</button>
+
+    </form>
+  )
 }
 
 
 
 
-// const ContactForm = () => {
-//     const [phoneNumberLabels, setPhoneNumberLabels] = useState(["Phone number 01"]) 
-//     const [numberOfPhoneNumbers, setNumberOfPhoneNumbers] = useState(1)
-//  //   console.log(numberOfPhoneNumbers)
-
-//     const phoneButtonHandler = (event) => {
-//         let nextPhoneNumberLabels = phoneNumberLabels
-//         let nextIndex = nextPhoneNumberLabels.length + 1 
-//         let nextLabel = nextIndex < 10?  "Phone Number 0" + nextIndex : "Phone Number " + nextIndex
-//         nextPhoneNumberLabels.push(nextLabel)
-// //        console.log(nextLabel)
-//         setPhoneNumberLabels(nextPhoneNumberLabels)
-//         event.preventDefault()
-//     }
-
-//     useEffect( () => {
-//     console.log(phoneNumberLabels)
-//     },[phoneNumberLabels])
-
-
-//     return (
-//         <form>
-//             <div className="name_and_email_container">
-//                 <div className="name_field">
-//                     <p><label htmlFor="name">Full name</label></p>
-//                     <p><input type="text" name="name" id="name" /></p>
-//                 </div>
-
-//                 <div className="email_field">
-//                     <p><label htmlFor="email">Email address</label></p>
-//                     <p><input type="email" name="email" id="email" /></p>
-//                 </div>
-//             </div>
-
-//             <div className="phone_numbers_container">
-//                 <button onClick={phoneButtonHandler}>Add new phone number</button>
-//                 <div>
-//                     {phoneNumberLabels.map( (label) => {
-//                        return(<p key={label}>{label}</p>);
-//                     })}
-//                 </div>
-//             </div>
-            
-
-//         </form>
-//     )
-
-// }
 
 export default ContactForm
