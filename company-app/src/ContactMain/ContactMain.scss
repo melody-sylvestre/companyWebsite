@@ -2,9 +2,45 @@
 @import "../styles/fonts";
 @import "../styles/margins";
 
+* {
+    font-family: $paragraph_font;
+}
+
 .contact_main {
-    display: flex;
+    display:flex;
     flex-direction: row;
+    justify-content: space-between;
     margin-left: $left_margin;
     margin-right: $right_margin;
+}
+
+.contact_text_container{
+    max-width: 500px;
+
+    h2 { 
+        font-size: $heading_font_size;
+        font-weight: 300;
+    }
+
+    p {
+        font-size: $paragraph_font_size;
+        font-weight: bold;
+    }
+}
+
+.side_image {
+     object-fit: none;
+     height: 800px;
+     padding-left: 30px   ;
+}
+
+@media screen and (max-width:800px) {
+    .side_image {
+        display: none;
+    }
+
+    .contact_main {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }

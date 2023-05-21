@@ -1,4 +1,5 @@
 import "./ContactForm.scss"
+import { ReactComponent as IconSubmit } from '../SVGImages/Icon_Submit.svg'
 import { useState } from "react"
 
 
@@ -10,11 +11,8 @@ const ContactForm = (props) => {
       EmailAddress: "",
       Message: "",
     })
-
   const [phoneNumbers, setPhoneNumbers] = useState([""])
-
   const [bIncludeAddressDetails, setBIncludeAddressDetails] = useState(false)
-
   const [addressDetails, setAddressDetails] = useState(
     {
       AddressLine1: "",
@@ -23,8 +21,7 @@ const ContactForm = (props) => {
       StateCounty: "",
       Postcode: "",
       Country: ""
-    }
-  )
+    })
 
   const handleChangeSimpleFormFields = (event) => {
     let newSimpleFormFields = { ...simpleFormFields }
@@ -36,6 +33,10 @@ const ContactForm = (props) => {
     let newPhoneNumbers = [...phoneNumbers]
     newPhoneNumbers[index] = event.target.value
     setPhoneNumbers(newPhoneNumbers)
+  }
+
+  const addPhoneNumberField = () => {
+    setPhoneNumbers([...phoneNumbers, ""])
   }
 
   const handleAddressCheckBox = (event) => {
@@ -52,13 +53,6 @@ const ContactForm = (props) => {
     setAddressDetails(newAddressDetails)
   }
 
-
-  const addPhoneNumberField = () => {
-    setPhoneNumbers([...phoneNumbers, ""])
-  }
-
-
-
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -71,13 +65,13 @@ const ContactForm = (props) => {
       AddressDetails: addressDetails
     }
 
-    const formLabels = {
-      
+    const formLabels =
+    {
       FullName: "Full name",
       EmailAddress: "Email address",
       PhoneNumbers: "Phone number",
-      Message : "Message",
-      bIncludeAddressDetails : "Add address details",
+      Message: "Message",
+      bIncludeAddressDetails: "Add address details",
       "AddressDetails.AddressLine1": "Address line 1",
       "AddressDetails.AddressLine2": "Address line 2",
       "AddressDetails.CityTown": "City/Town",
@@ -90,9 +84,9 @@ const ContactForm = (props) => {
     // the API does not accept empty phone numbers - so the PhoneNumbers field should be added 
     // to the request only if users have entered at least one phone number  
     let nonEmptyPhoneNumbers = [...phoneNumbers]
-    nonEmptyPhoneNumbers = nonEmptyPhoneNumbers.filter((item) => item.trim() != "")
-    
-    if (nonEmptyPhoneNumbers.length !==0) {
+    nonEmptyPhoneNumbers = nonEmptyPhoneNumbers.filter((item) => item.trim() !== "")
+
+    if (nonEmptyPhoneNumbers.length !== 0) {
       formAnswers.PhoneNumbers = [...nonEmptyPhoneNumbers]
     }
 
@@ -105,14 +99,14 @@ const ContactForm = (props) => {
     }).then(response => {
       return response.json()
     }).then(responseBody => {
-        if(responseBody.Status==="1") {
-          props.setFormSubmitted(true)
-        } else {
-          props.setFormSubmitted(false)
-          responseBody.Errors.forEach(((error) => {
-            alert(formLabels[error.FieldName] + ": "  + error.MessageCode.replaceAll("_", " "))
-          }))
-        }
+      if (responseBody.Status === "1") {
+        props.setFormSubmitted(true)
+      } else {
+        props.setFormSubmitted(false)
+        responseBody.Errors.forEach(((error) => {
+          alert(formLabels[error.FieldName] + ": " + error.MessageCode.replaceAll("_", " "))
+        }))
+      }
     })
   }
 
@@ -132,11 +126,11 @@ const ContactForm = (props) => {
       <div className="phone_numbers_section">
         {phoneNumbers.map((element, index) => (
           <div className="form_field_and_label" key={index}>
-            <label htmlFor={"phone_number_" + (index + 1)}>{index < 9 ? "Phone number 0" + (index + 1) : "Phone number " + (index + 1)} <span> - Optional </span></label>
+            <label htmlFor={"phone_number_" + (index + 1)}>{index < 9 ? "Phone number 0" + (index + 1) : "Phone number " + (index + 1)} <span> - optional </span></label>
             <input type="tel" name="phoneNumber" id={"phone_number_" + (index + 1)} value={element || ""} onChange={event => handleChangePhoneNumber(index, event)} />
           </div>
         ))}
-        <button className="button add" type="button" onClick={() => addPhoneNumberField()}>Add</button>
+        <button className="add_phone_number_button" type="button" onClick={() => addPhoneNumberField()}>Add new phone number</button>
       </div>
 
       <div className="message_section form_field_and_label">
@@ -144,24 +138,25 @@ const ContactForm = (props) => {
         <textarea name="Message" id="Message" value={simpleFormFields.Message || ""} required onChange={event => handleChangeSimpleFormFields(event)} />
       </div>
 
-      <div className="address_section">
+      <div className="address_checkbox_container">
         <input type="checkbox" name="address_checkbox" id="address_checkbox" checked={bIncludeAddressDetails} onChange={event => handleAddressCheckBox(event)} />
-        <label htmlFor="address_checkbox">Add address details</label>
-
-        {bIncludeAddressDetails ?
-          <div className="address_details">
-            <div className="address_lines">
-              <div className="form_field_and_label">
-                <label htmlFor="address_line1">Address line 1</label>
-                <input type="text" name="AddressLine1" id="address_line1" required value={addressDetails.AddressLine1 || ""}  onChange={event => handleChangeAddress(event)} />
-              </div>
-              <div className="form_field_and_label">
-                <label htmlFor="address_line2">Address line 2</label>
-                <input type="text" name="AddressLine2" id="address_line2" value={addressDetails.AddressLine2 || ""} onChange={event => handleChangeAddress(event)} />
-              </div>
+        <label className="label_checkbox" htmlFor="address_checkbox">Add address details</label>
+      </div>
+      {bIncludeAddressDetails ?
+        <div className="address_details">
+          <div className="address_lines">
+            <div className="form_field_and_label">
+              <label htmlFor="address_line1">Address line 1</label>
+              <input type="text" name="AddressLine1" id="address_line1" required value={addressDetails.AddressLine1 || ""} onChange={event => handleChangeAddress(event)} />
             </div>
+            <div className="form_field_and_label">
+              <label htmlFor="address_line2">Address line 2</label>
+              <input type="text" name="AddressLine2" id="address_line2" value={addressDetails.AddressLine2 || ""} onChange={event => handleChangeAddress(event)} />
+            </div>
+          </div>
 
-            <div className="city_county_postcode_country_fields">
+          <div className="city_and_country_details">
+            <div className="city_county_fields">
               <div className="form_field_and_label">
                 <label htmlFor="city">City/Town</label>
                 <input type="text" name="CityTown" id="city" value={addressDetails.CityTown || ""} required onChange={event => handleChangeAddress(event)} />
@@ -170,6 +165,8 @@ const ContactForm = (props) => {
                 <label htmlFor="state">State/County</label>
                 <input type="text" name="StateCounty" id="state" value={addressDetails.StateCounty || ""} required onChange={event => handleChangeAddress(event)} />
               </div>
+            </div>
+           <div className="postcode_country_fields">
               <div className="form_field_and_label">
                 <label htmlFor="postcode">Postcode</label>
                 <input type="text" name="Postcode" id="postcode" value={addressDetails.Postcode || ""} required onChange={event => handleChangeAddress(event)} />
@@ -180,13 +177,15 @@ const ContactForm = (props) => {
               </div>
             </div>
           </div>
-          : ""}
-      </div>
+        </div>
+        : ""}
 
-
-
-      <button className="button submit" type="submit">Submit</button>
-
+      <button className="submit_button" type="submit">
+        <div className="submit_icon_container">
+          <IconSubmit />
+        </div>
+        <p>Submit</p>
+      </button>
     </form>
   )
 }
