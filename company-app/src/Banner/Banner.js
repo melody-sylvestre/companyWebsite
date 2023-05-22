@@ -39,8 +39,9 @@ const Banner = () => {
                                     <div className="banner_text">
                                         <h1>{slideInfo.Title}</h1>
                                         <p>{slideInfo.Subtitle}</p>
-                                        <Link to="/contact-us" className="link">Contact us</Link>
+                                        <Link to="/contact-us" className="link_banner">Contact us</Link>
                                     </div>
+                             
                                 </SwiperSlide>
                             )
                         })}

@@ -1,46 +1,51 @@
 @import "../styles/colours";
-@import "../styles/fonts";
+@import "../styles/fontsAndTextStyles";
 @import "../styles/margins";
 
 * {
-    font-family: $paragraph_font;
+    font-family: $main_font;
 }
 
 .contact_main {
     display:flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-left: $left_margin;
-    margin-right: $right_margin;
+    margin-left: $left_margin_desktop;
+    margin-right: $right_margin_desktop;
 }
 
 .contact_text_container{
     max-width: 500px;
 
-    h2 { 
-        font-size: $heading_font_size;
-        font-weight: 300;
+    h1{ 
+        color: $primary_text_colour;
+        @include standardTitle
     }
 
     p {
-        font-size: $paragraph_font_size;
+        color: $primary_text_colour;
+        @include standardParagraph; 
         font-weight: bold;
+        padding-bottom: 20px;
     }
 }
 
 .side_image {
      object-fit: none;
      height: 800px;
+     max-width: 50%;
      padding-left: 30px   ;
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:900px) {
     .side_image {
         display: none;
     }
 
     .contact_main {
-        margin-left: 10px;
-        margin-right: 10px;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: $side_margins_mobile;
+        margin-right: $side_margins_mobile;
     }
 }

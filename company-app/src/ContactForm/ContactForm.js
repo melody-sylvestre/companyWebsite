@@ -5,12 +5,13 @@ import { useState } from "react"
 
 const ContactForm = (props) => {
 
-  const [simpleFormFields, setSimpleFormFields] = useState(
+  const [basicFormFields, setBasicFormFields] = useState(
     {
       FullName: "",
       EmailAddress: "",
       Message: "",
     })
+
   const [phoneNumbers, setPhoneNumbers] = useState([""])
   const [bIncludeAddressDetails, setBIncludeAddressDetails] = useState(false)
   const [addressDetails, setAddressDetails] = useState(
@@ -23,10 +24,10 @@ const ContactForm = (props) => {
       Country: ""
     })
 
-  const handleChangeSimpleFormFields = (event) => {
-    let newSimpleFormFields = { ...simpleFormFields }
-    newSimpleFormFields[event.target.name] = event.target.value
-    setSimpleFormFields(newSimpleFormFields)
+  const handleChangeBasicFormFields = (event) => {  
+    let newBasicFormFields = { ...basicFormFields }
+    newBasicFormFields[event.target.name] = event.target.value
+    setBasicFormFields(newBasicFormFields)
   }
 
   const handleChangePhoneNumber = (index, event) => {
@@ -58,9 +59,9 @@ const ContactForm = (props) => {
 
     let formAnswers =
     {
-      FullName: simpleFormFields.FullName,
-      EmailAddress: simpleFormFields.EmailAddress,
-      Message: simpleFormFields.Message,
+      FullName: basicFormFields.FullName,
+      EmailAddress: basicFormFields.EmailAddress,
+      Message: basicFormFields.Message,
       bIncludeAddressDetails: bIncludeAddressDetails,
       AddressDetails: addressDetails
     }
@@ -115,11 +116,11 @@ const ContactForm = (props) => {
       <div className="name_and_email_section">
         <div className="form_field_and_label">
           <label htmlFor="name">Full name</label>
-          <input type="text" name="FullName" id="name" value={simpleFormFields.FullName || ""} required onChange={event => handleChangeSimpleFormFields(event)} />
+          <input type="text" name="FullName" id="name" value={basicFormFields.FullName || ""} required onChange={event => handleChangeBasicFormFields(event)} />
         </div>
         <div className="form_field_and_label">
           <label htmlFor="email">Email address</label>
-          <input type="text" id="email" name="EmailAddress" value={simpleFormFields.EmailAddress || ""} required onChange={event => handleChangeSimpleFormFields(event)} />
+          <input type="text" id="email" name="EmailAddress" value={basicFormFields.EmailAddress || ""} required onChange={event => handleChangeBasicFormFields(event)} />
         </div>
       </div>
 
@@ -135,7 +136,7 @@ const ContactForm = (props) => {
 
       <div className="message_section form_field_and_label">
         <label htmlFor="Message">Message</label>
-        <textarea name="Message" id="Message" value={simpleFormFields.Message || ""} required onChange={event => handleChangeSimpleFormFields(event)} />
+        <textarea name="Message" id="Message" value={basicFormFields.Message || ""} required onChange={event => handleChangeBasicFormFields(event)} />
       </div>
 
       <div className="address_checkbox_container">
@@ -166,7 +167,7 @@ const ContactForm = (props) => {
                 <input type="text" name="StateCounty" id="state" value={addressDetails.StateCounty || ""} required onChange={event => handleChangeAddress(event)} />
               </div>
             </div>
-           <div className="postcode_country_fields">
+            <div className="postcode_country_fields">
               <div className="form_field_and_label">
                 <label htmlFor="postcode">Postcode</label>
                 <input type="text" name="Postcode" id="postcode" value={addressDetails.Postcode || ""} required onChange={event => handleChangeAddress(event)} />
@@ -184,7 +185,7 @@ const ContactForm = (props) => {
         <div className="submit_icon_container">
           <IconSubmit />
         </div>
-        <p>Submit</p>
+        Submit
       </button>
     </form>
   )
