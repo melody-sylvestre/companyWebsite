@@ -2,7 +2,7 @@
 @import "../styles/fontsAndTextStyles";
 @import "../styles/margins";
 
-* { 
+* {
     font-family: $main_font;
 }
 
@@ -12,7 +12,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 50px
+    padding: 50px;
+    height: 200px;
+
+    h2 {
+        @include standardTitle;
+        color: $primary_text_colour;
+    }
+
+    p {
+        @include standardParagraph;
+        font-weight: bold;
+    }
 }
 
 .valid_icon_container {
@@ -22,4 +33,3 @@
     border-radius: 50%;
     background-color: $valid_icon_background;
 }
-

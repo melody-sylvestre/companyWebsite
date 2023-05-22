@@ -11,17 +11,20 @@ form {
     flex-direction: column;
     justify-content: space-around;
     column-gap: 20px;
+    max-width: 500px;
 }
 
 input,
 textarea {
     background-color: $input_field_colour;
     border: solid $border_colour 1px;
+    @include standardParagraph;
 }
 
 #Message {
     height: 200px;
 }
+
 .form_field_and_label {
     display: flex;
     flex-direction: column;
@@ -39,22 +42,15 @@ textarea {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 10px;
+    
 }
+
 
 .phone_numbers_section {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     gap: 10px;
-
-    input {
-        max-width: 500px;
-    }
-
-    label {
-        font-size: $paragraph_font_size;
-    }
-
     span {
         color: $secondary_text_colour;
         font-size: $paragraph_font_size;
@@ -74,10 +70,9 @@ textarea {
 
 .address_checkbox_container {
     .label_checkbox {
+        @include standardParagraph;
         color: $primary_text_colour;
-        font-size: $paragraph_font_size;
         font-weight: bold;
-
     }
 }
 
@@ -86,7 +81,7 @@ textarea {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 10px;
+    gap: 5px;
 }
 
 .city_and_country_details {
@@ -126,10 +121,25 @@ textarea {
 }
 
 @media screen and (max-width: 800px) {
+  
     .city_and_country_details {
-        // justify-content: space-between;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 25px;
+   
+    }
+
+    .name_and_email_section {
         .form_field_and_label {
-            max-width: 150px;
+            width: 100%;
+        }
+    }
+
+    .address_lines {
+        .form_field_and_label {
+            width: 100%;
         }
     }
 }

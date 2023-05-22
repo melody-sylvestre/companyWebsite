@@ -12,26 +12,28 @@
     margin-right: $right_margin_desktop;
 
     h1 {
-        font-size: $title_font_size ;
+        @include standardTitle ;
     }
 
     h2 {
+        @include standardTitle;
         font-size: $subtitle_font_size;
     }
 
     p{
-        font-size: $paragraph_font_size;
+        @include standardParagraph;
     }
 
     li{
-        font-size: $paragraph_font_size;
-        font-weight: bold;
-    }
-    .about_us_subtitle {
+        @include standardParagraph;
         font-weight: bold;
     }
 }
 
+.about_us_important_text {
+    @include standardParagraph;
+    font-weight: bold;
+}
 
 .image_about_us {
     max-width: 500px;

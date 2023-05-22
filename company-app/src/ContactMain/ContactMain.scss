@@ -19,29 +19,31 @@
 
     h1{ 
         color: $primary_text_colour;
-        font-size: $subtitle_font_size ;
-        font-weight: normal;
+        @include standardTitle
     }
 
     p {
         color: $primary_text_colour;
-        font-size: $paragraph_font_size;
+        @include standardParagraph; 
         font-weight: bold;
+        padding-bottom: 20px;
     }
 }
 
 .side_image {
      object-fit: none;
      height: 800px;
+     max-width: 50%;
      padding-left: 30px   ;
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:900px) {
     .side_image {
         display: none;
     }
 
     .contact_main {
+        flex-direction: column;
         justify-content: center;
         margin-left: $side_margins_mobile;
         margin-right: $side_margins_mobile;

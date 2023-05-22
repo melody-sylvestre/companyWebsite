@@ -2,6 +2,7 @@ import { useState } from "react"
 import ContactForm from "../ContactForm/ContactForm"
 import FormSubmittedBox from "../FormSubmittedBox/FormSubmittedBox"
 import "./ContactMain.scss"
+
 const ContactMain = () => {
 
     const [formSubmitted, setFormSubmitted] = useState(false)
