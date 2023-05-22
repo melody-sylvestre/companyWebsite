@@ -25,16 +25,17 @@
     max-width: 500px;
 
     h2 {
-        color:$primary_text_colour;
+        color: $primary_text_colour;
         font-family: $main_font;
         font-size: $title_font_size ;
-        font-weight: 400;
+        font-weight: normal;
     }
 
     p,li {
         color: $primary_text_colour;
         font-family: $main_font;
         font-size: $paragraph_font_size;
+        line-height: 2;
     }
 
     li {
@@ -43,22 +44,20 @@
 
     button {
         background-color: $primary_accent_colour;
-        border-radius: 5px;
+        border-radius: 2px;
         border-style: none;
         color: $tertiary_text_colour;
         font-family: $main_font;
         font-size: $paragraph_font_size;
-        font-weight: 700;
-        padding: 10px 30px;
-        width: 150px;    
+        font-weight: bold;
+        padding: 10px 20px;
+        width: 120px;    
     }
-
 }
 
 .card_image {
     object-fit: cover;
-    height: 250px;
-    width: 450px;
+    max-width: 450px;
 }
 
 @media screen and (max-width:800px) {
@@ -70,5 +69,8 @@
     
     .text_container {
         align-items: center;
+    }
+    .card_image{
+        width: 100%;
     }
 }

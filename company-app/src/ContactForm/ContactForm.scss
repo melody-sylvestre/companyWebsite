@@ -28,6 +28,7 @@ textarea {
     flex-grow: 1;
 
     label {
+        color: $primary_text_colour;
         font-size: $paragraph_font_size;
     }
 }
@@ -73,8 +74,10 @@ textarea {
 
 .address_checkbox_container {
     .label_checkbox {
+        color: $primary_text_colour;
         font-size: $paragraph_font_size;
         font-weight: bold;
+
     }
 }
 
