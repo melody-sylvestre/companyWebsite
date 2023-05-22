@@ -41,15 +41,20 @@
 
 }
 
-.link_plain_text_container{
+.link_plain_text{
     @include darkButton;
 }   
+
+.link_plain_text_container {
+    display: flex;
+    text-align: center;
+}
+
 
 
 
 @media screen and (max-width:800px) {
     .plain_text_card {
-        align-items: center;
         margin-left: $side_margins_mobile;
         margin-right: $side_margins_mobile; 
         justify-content: center;
@@ -59,5 +64,10 @@
         p {
             max-width: 400px;
         }
+    }
+    
+    .link_plain_text, .link_plain_text_container {
+        max-width: 400px;
+        width:  100%;
     }
 }

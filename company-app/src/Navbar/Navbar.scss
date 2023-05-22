@@ -39,14 +39,8 @@ nav {
     }
 
     button{
-        background-color: $secondary_accent_colour;
-        border-radius: 5px;
-        border-style: none;
-        color: $primary_accent_colour;
-        font-family: $main_font;
-        font-size: $paragraph_font_size;
-        font-weight: bold;
-        padding: 10px 30px;
+        @include lightButton;
+        width: 100px;
     }    
 }
 
