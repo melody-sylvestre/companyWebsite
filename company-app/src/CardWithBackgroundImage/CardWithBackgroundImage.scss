@@ -1,6 +1,6 @@
-@import "../styles/_colours";
-@import "../styles/_fonts";
-@import "../styles/_margins";
+@import "../styles/colours";
+@import "../styles/fontsAndTextStyles";
+@import "../styles/margins";
 
 * {
     box-sizing: border-box;
@@ -32,28 +32,16 @@
 
     h2 {
         color:$tertiary_text_colour;
-        font-family: $main_font;
-        font-size: $title_font_size ;
-        font-weight: 400;
+        @include standardTitle;    
     }
 
     p {
         color: $tertiary_text_colour;
-        font-family: $main_font;
-        font-size: $paragraph_font_size;
-        
+        @include standardParagraph;
     }
 
     button {
-        background-color: $secondary_accent_colour;
-        border-radius: 5px;
-        border-style: none;
-        color: $primary_accent_colour;
-        font-family: $main_font;
-        font-size: $paragraph_font_size;
-        font-weight: 700;
-        padding: 10px 30px;
-        width: 150px;    
+        @include lightButton;    
     }
 
 }
@@ -63,6 +51,10 @@
         margin-left: $side_margins_mobile;
         margin-right: $side_margins_mobile; 
         justify-content: center;
+        
+        button {
+            width: 100%;
+        }
     }
 
     .card_with_background_image {
